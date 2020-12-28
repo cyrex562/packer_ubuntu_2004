@@ -1,0 +1,12 @@
+virt-install \
+-n ubuntu-2004 \
+--description "packer ubuntu 2004 image" \
+--os-type=Linux \
+--os-variant=ubuntu20.04 \
+--ram=4096 \
+--vcpus=4 \
+--disk path=./output/live-server/ubuntu-2004,bus=virtio,size=100 \
+--import \
+--graphics none \
+--console pty,target_type=serial \
+--network bridge:br0

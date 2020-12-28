@@ -44,7 +44,8 @@
             "ssh_username": "box-admin",
             "type": "qemu",
             "use_default_display": true,
-            "display": "none"
+            "display": "none",
+            "headless": true
         }
     ],
     "provisioners": [
@@ -53,6 +54,14 @@
                 "ls /"
             ],
             "type": "shell"
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "manifest",
+            "output": "output/manifest.json",
+            "strip_path": true,
+            "custom_data": {}
         }
     ]
 }
